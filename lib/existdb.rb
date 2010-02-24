@@ -56,8 +56,13 @@ end
 
 require 'existdb/classwrap.rb'
 require 'existdb/collection.rb'
-require 'existdb/resource.rb'
+
+require 'existdb/resource/base.rb'
+require 'existdb/resource/xml.rb'
+require 'existdb/resource/binary.rb'
 require 'existdb/resource_set.rb'
+
 require 'existdb/xquery_service.rb'
 require 'existdb/meta.rb'
 require 'existdb/embedded.rb'
+require 'existdb/xql_factory.rb'

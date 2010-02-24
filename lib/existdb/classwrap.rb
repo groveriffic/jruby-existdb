@@ -36,7 +36,8 @@ module ExistDB
                     Java::OrgExistXmldb::LocalCollection => Collection,
                     Java::OrgExistXmldb::LocalXPathQueryService => XQueryService,
                     Java::OrgExistXmldb::LocalResourceSet => ResourceSet,
-                    Java::OrgExistXmldb::LocalXMLResource => Resource,
+                    Java::OrgExistXmldb::LocalXMLResource => Resource::Xml,
+                    Java::OrgExistXmldb::LocalBinaryResource => Resource::Binary,
                     Java::OrgExistXmldb::FullXmldbURI => Proc.new { |obj| obj.toString },
                     Java::JavaUtil::Date => Proc.new { |obj| Time.parse( obj.to_s ) },
                     Java::OrgExistXquery::PathExpr => Proc.new { |obj| obj }

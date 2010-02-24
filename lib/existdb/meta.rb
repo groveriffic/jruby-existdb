@@ -17,7 +17,8 @@ module ExistDB
       # obj = MyClass.new('foo', 'bar')
       # # MyClass.new now accepts named or ordered params!
       named_or_ordered_options(options, ordered_options).each do |key, value|
-        if key.is_a(Symbol) then
+        if key.is_a?(Symbol) or key.is_a?(String) then
+          key = "#{key}=".to_sym
           self.send(key, value)
         end
       end
