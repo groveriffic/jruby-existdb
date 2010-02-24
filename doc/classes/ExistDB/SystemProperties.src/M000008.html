@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>autocreate_config_files (ExistDB::SystemProperties)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/existdb.rb, line 30</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">autocreate_config_files</span>
+        <span class="ruby-comment cmt"># Copy the config files to the places where eXist will eXpect them.</span>
+        <span class="ruby-comment cmt"># the log4j.xml file should be on your classpath to ensure proper logging</span>
+        [ <span class="ruby-value str">'conf.xml'</span>, <span class="ruby-value str">'log4j.xml'</span> ].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config_file</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">src</span> = <span class="ruby-node">&quot;#{File.dirname(__FILE__)}/../#{config_file}&quot;</span>
+            <span class="ruby-identifier">dest</span> = <span class="ruby-node">&quot;#{home_directory}/#{config_file}&quot;</span>
+            <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">copy</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">dest</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dest</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>
