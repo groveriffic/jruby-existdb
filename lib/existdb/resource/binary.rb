@@ -4,6 +4,7 @@ module ExistDB
 
             def content=(data)
                 bytes = data.to_s.to_java_bytes
+                @obj.setContent(bytes)
             end
 
             def content
