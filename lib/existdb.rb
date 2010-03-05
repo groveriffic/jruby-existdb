@@ -11,11 +11,11 @@ module ExistDB
   class SystemProperties
     class << self
       def home_directory
-        ENV['EXIST_HOME'] || '/var/spool/existdb'
+        defined?(EXIST_HOME) && EXIST_HOME || ENV['EXIST_HOME'] || '/var/spool/existdb'
       end
       
       def log_directory
-        ENV['EXIST_LOG'] || '/var/log/existdb'
+        defined?(EXIST_LOG) && EXIST_LOG || ENV['EXIST_LOG'] || '/var/log/existdb'
       end
 
       def data_directory
