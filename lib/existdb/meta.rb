@@ -19,7 +19,7 @@ module ExistDB
       named_or_ordered_options(options, ordered_options).each do |key, value|
         if key.is_a?(Symbol) or key.is_a?(String) then
           key = "#{key}=".to_sym
-          self.send(key, value)
+          self.send(key, value) if self.respond_to?(key)
         end
       end
       

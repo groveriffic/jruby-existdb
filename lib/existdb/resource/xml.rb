@@ -14,6 +14,10 @@ module ExistDB
                 parent.xquery.execute(self, *opts)
             end
 
+            def dom
+                @obj.getContentAsDOM
+            end
+
         end
     end
 end
