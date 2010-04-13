@@ -1,6 +1,7 @@
 
 module ExistDB
     module Dom
+        class Boolean; end
 
         # Inspired by HappyMapper
 
@@ -19,35 +20,53 @@ module ExistDB
             private
 
             def get_element(tag_name)
-                @cache[tag_name] ||= @dom.getElementsByTagName(tag_name).get(0).getNodeValue
+                @cache[tag_name] ||= self.class.get_element(tag_name, @dom)
             end
-            
+
+            def get_attribute(tag_name)
+                @cache[tag_name] ||= self.class.get_attribute(tag_name, @dom)
+            end
+
             module ClassMethods
 
                 def attribute(name, type = String, options = {})
-                    raise 'BOOOOMMM!'
+                    a = Attribute.new(name, type, options)
+                    @attributes ||= Hash.new
+                    @attributes[a.tag] = a
+                    self.class_eval %{
+                        def #{a.method_name}
+                            get_attribute(#{a.tag.inspect})
+                        end
+                    }
                 end
 
                 def attributes
-                    @attributes[to_s] || []
+                    @attributes.values
                 end
 
                 def element(name, type = String, options = {})
-                    element = [name, type, options]
-                    tag_name = options[:tag] || name
-                    method_name = name.to_s.tr('-','_')
-
-                    @elements[to_s] ||= []
-                    @elements[to_s] << element
+                    e = Element.new(name, type, options)
+                    @elements ||= Hash.new
+                    @elements[e.tag] = e
                     self.class_eval %{
-                        def #{method_name}
-                            get_element(#{tag_name.inspect})
+                        def #{e.method_name}
+                            get_element(#{e.tag.inspect})
                         end
                     }
                 end
 
                 def elements
-                    @elements[to_s] || []
+                    @elements.values
+                end
+
+                def get_element(tag_name, dom)
+                    e = @elements[tag_name]
+                    e.type_cast( dom.getElementsByTagName(tag_name).get(0).getNodeValue )
+                end
+
+                def get_attribute(tag_name, dom)
+                    a = @attributes[tag_name]
+                    a.type_cast( dom.getAttributes.getNamedItem(tag_name) )
                 end
 
                 def tag(new_tag_name)
@@ -76,14 +95,48 @@ module ExistDB
             end
 
             class Item
+                attr_accessor :name, :type, :tag, :options, :method_name
                 def initialize(name, type, o={})
                     self.name = name.to_s
+                    self.method_name = self.name.tr('-','_')
                     self.type = type
                     self.tag = o[:tag] || name.to_s
                     self.options = { :single => true }.merge(o.merge(:name => self.name))
 
                     @xml_type = self.class.to_s.split('::').last.downcase
                 end
+
+                def type_cast(value, type = self.type)
+                    begin
+                        if type == String then value.to_s
+                        elsif type == Float then value.to_f
+                        elsif type == Time then
+                            Time.parse(value.to_s) rescue Time.at(value.to_i)
+                        elsif type == Date then Date.parse(value.to_s)
+                        elsif type == DateTime then DateTime.parse(value.to_s)
+                        elsif type == Boolean then
+                            ['true','t','1'].include?(value.to_s.downcase)
+                        elsif type == Integer then
+                            # ganked from datamapper, and happymapper
+                            value_to_i = value.to_i
+                            if value_to_i == 0 && value != '0'
+                                value_to_s = value.to_s
+                                begin
+                                    Integer(value_to_s =~ /^(\d+)/ ? $1 : value_to_s)
+                                rescue ArgumentError
+                                    nil
+                                end
+                            else
+                                value_to_i
+                            end
+                        else
+                            value
+                        end
+                    rescue
+                        value
+                    end
+                end
+            
             end
 
             class Element < Item; end
