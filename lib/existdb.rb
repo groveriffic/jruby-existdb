@@ -3,6 +3,7 @@ require 'uri'
 require 'cgi' # For HTML Escaping
 require 'find'
 require 'fileutils'
+require 'singleton'
 require 'forwardable'
 require 'date'
 require 'time'
