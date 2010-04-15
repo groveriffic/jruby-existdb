@@ -92,6 +92,24 @@ module ExistDB
                     end
 
                 end
+
+                def find(*options)
+                    xql = XQLFactory::XQLFactory.new(*options)
+
+                    if xql.node_xpath.nil? then
+                        xql.node_xpath = "//#{tag_name}"
+                    end
+
+                    if xql.doc.is_a?(Resource::Xml) then
+                        xql.doc.xquery(xql.xquery).map{ |res| new(res) }
+                    elsif xql.doc.is_a?(ResourceSet) then
+                        xql.doc.join.xquery(xql.xquery).map{ |res| new(res) }
+                    elsif xql.doc.is_a?(String) and Embedded.instance.running?
+                        Embedded.instance.xquery_service.query(xql.xquery).map{ |res| new(res) }
+                    else
+                        nil
+                    end
+                end
             end
 
             class Item

@@ -93,8 +93,6 @@ module ExistDB
       def initialize(*options)
         initialize_with_options(options, [:doc, :start, :max, :sort])
         yield self if block_given?
-
-        @return_tag ||= 'xml'
       end
 
       def limit_statement
@@ -106,15 +104,11 @@ module ExistDB
       end
 
       def sort_statement
-        if sort_xpath then
-          "order by $node#{sort_xpath}"
+        if sort then
+          "order by $node/#{sort}"
         else
           ''
         end
-      end
-
-      def sort_xpath
-        "//#{sort}" if sort
       end
 
       def search_statement
@@ -122,13 +116,25 @@ module ExistDB
       end
 
       def init_statement
-        raise "doc attribute required" if doc.nil? or doc.empty?
+        raise "doc attribute required" if doc.nil? or doc.to_s.empty?
         raise "node_xpath attribute required" if node_xpath.nil? or node_xpath.empty?
-        "let $scope := for $node in #{doc}#{node_xpath}#{search_statement} #{sort_statement} return $node\n"
+        "let $scope := for $node in #{doc if doc.is_a?(String)}#{node_xpath}#{search_statement} #{sort_statement} return $node\n"
+      end
+
+      def return_tag
+        @return_tag || 'xml'
+      end
+
+      def return_tag=(tag)
+        @return_tag = tag
       end
 
       def return_statement
-        "return <#{return_tag}#{return_attributes_statement}> { $scope } </#{return_tag}>"
+        if return_attributes_statement.empty? and @return_tag.nil? then
+          "return $scope"
+        else
+          "return <#{return_tag}#{return_attributes_statement}> { $scope } </#{return_tag}>"
+        end
       end
 
       def return_attributes_statement
