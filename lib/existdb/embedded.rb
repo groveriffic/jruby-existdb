@@ -10,14 +10,13 @@ module ExistDB
       @properties ||= {'create-database' => 'true'}
       @url ||= "exist:///db"
 
-      start
-
       at_exit do
-        stop
+        stop if running?
       end
     end
 
     def start
+      return false if running?
       @impl = org.exist.xmldb.DatabaseImpl.new
       @properties.each{ |key, value| @impl.setProperty(key.to_s, value.to_s) }
       org.xmldb.api.DatabaseManager.registerDatabase(@impl)
@@ -38,7 +37,7 @@ module ExistDB
     alias :started? :running? 
 
     def stop
-      @database_instance_manager.shutdown if running?
+      @database_instance_manager.shutdown
       true
     end
 
