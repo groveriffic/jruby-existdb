@@ -1,7 +1,6 @@
 
 module ExistDB
     module Dom
-        class Boolean; end
 
         # Inspired by HappyMapper
 
@@ -61,12 +60,14 @@ module ExistDB
 
                 def get_element(tag_name, dom)
                     e = @elements[tag_name]
-                    e.type_cast( dom.getElementsByTagName(tag_name).get(0).getNodeValue )
+                    value = dom.getElementsByTagName(tag_name).get(0).getNodeValue rescue nil
+                    e.type_cast( value )
                 end
 
                 def get_attribute(tag_name, dom)
                     a = @attributes[tag_name]
-                    a.type_cast( dom.getAttributes.getNamedItem(tag_name) )
+                    value = dom.getAttributes.getNamedItem(tag_name) rescue nil
+                    a.type_cast( value )
                 end
 
                 def tag(new_tag_name)
@@ -112,6 +113,8 @@ module ExistDB
                 end
             end
 
+            class Boolean; end
+
             class Item
                 attr_accessor :name, :type, :tag, :options, :method_name
                 def initialize(name, type, o={})
@@ -133,7 +136,7 @@ module ExistDB
                         elsif type == Date then Date.parse(value.to_s)
                         elsif type == DateTime then DateTime.parse(value.to_s)
                         elsif type == Boolean then
-                            ['true','t','1'].include?(value.to_s.downcase)
+                            ['true','t','1','y','yes'].include?(value.to_s.downcase)
                         elsif type == Integer then
                             # ganked from datamapper, and happymapper
                             value_to_i = value.to_i
@@ -158,7 +161,9 @@ module ExistDB
             end
 
             class Element < Item; end
+
             class Attribute < Item; end
+
         end
 
     end
