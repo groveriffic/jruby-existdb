@@ -60,8 +60,12 @@ module ExistDB
 
                 def get_element(tag_name, dom)
                     e = @elements[tag_name]
-                    value = dom.getElementsByTagName(tag_name).get(0).getNodeValue rescue nil
-                    e.type_cast( value )
+                    dom.getChildNodes.each do |child|
+                        next if not child.respond_to?(:getTagName) or child.getTagName != tag_name
+                        return e.type_cast( child.getNodeValue )
+                        break
+                    end
+                    return nil
                 end
 
                 def get_attribute(tag_name, dom)
