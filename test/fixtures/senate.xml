@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roll_call_vote>
+<congress>111</congress>
+<session>1</session>
+<congress_year>2009</congress_year>
+<vote_number>177</vote_number>
+<vote_date>May 4, 2009,  05:57 PM</vote_date>
+<modify_date>May 4, 2009,  06:31 PM</modify_date>
+<vote_question_text>On the Amendment S.Amdt. 1017 to S.Amdt. 1018 to S. 896 (Helping Families Save Their Homes Act of 2009)</vote_question_text>
+<vote_document_text>To provide that the primary and foundational responsibility of the Federal Housing Administration shall be to safeguard and preserve the solvency of the Administration.</vote_document_text>
+<vote_result_text>Amendment Rejected (36-56)</vote_result_text>
+<question>On the Amendment</question>
+<vote_title>Vitter Amdt. No. 1017</vote_title>
+<majority_requirement>1/2</majority_requirement>
+<vote_result>Amendment Rejected</vote_result>
+<document>
+<document_congress>111</document_congress>
+<document_type/>
+<document_number/>
+<document_name/>
+<document_title/><document_short_title/>
+</document>
+<amendment>
+<amendment_number>S.Amdt. 1017</amendment_number>
+<amendment_to_amendment_number>S.Amdt. 1018</amendment_to_amendment_number>
+<amendment_to_document_number>S. 896</amendment_to_document_number>
+<amendment_to_document_short_title>Helping Families Save Their Homes Act of 2009</amendment_to_document_short_title>
+<amendment_purpose>To provide that the primary and foundational responsibility of the Federal Housing Administration shall be to safeguard and preserve the solvency of the Administration.</amendment_purpose>
+</amendment>
+<count>
+<yeas>36</yeas>
+<nays>56</nays>
+<present/>
+<absent>7</absent>
+</count>
+<tie_breaker>
+<by_whom/>
+<tie_breaker_vote/>
+</tie_breaker>
+<members>
+<member>
+<member_full>Akaka (D-HI)</member_full>
+<last_name>Akaka</last_name>
+<first_name>Daniel</first_name>
+<party>D</party>
+<state>HI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S213</lis_member_id>
+</member>
+<member>
+<member_full>Alexander (R-TN)</member_full>
+<last_name>Alexander</last_name>
+<first_name>Lamar</first_name>
+<party>R</party>
+<state>TN</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S289</lis_member_id>
+</member>
+<member>
+<member_full>Barrasso (R-WY)</member_full>
+<last_name>Barrasso</last_name>
+<first_name>John</first_name>
+<party>R</party>
+<state>WY</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S317</lis_member_id>
+</member>
+<member>
+<member_full>Baucus (D-MT)</member_full>
+<last_name>Baucus</last_name>
+<first_name>Max</first_name>
+<party>D</party>
+<state>MT</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S127</lis_member_id>
+</member>
+<member>
+<member_full>Bayh (D-IN)</member_full>
+<last_name>Bayh</last_name>
+<first_name>Evan</first_name>
+<party>D</party>
+<state>IN</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S264</lis_member_id>
+</member>
+<member>
+<member_full>Begich (D-AK)</member_full>
+<last_name>Begich</last_name>
+<first_name>Mark</first_name>
+<party>D</party>
+<state>AK</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S319</lis_member_id>
+</member>
+<member>
+<member_full>Bennet (D-CO)</member_full>
+<last_name>Bennet</last_name>
+<first_name>Michael</first_name>
+<party>D</party>
+<state>CO</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S330</lis_member_id>
+</member>
+<member>
+<member_full>Bennett (R-UT)</member_full>
+<last_name>Bennett</last_name>
+<first_name>Robert</first_name>
+<party>R</party>
+<state>UT</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S231</lis_member_id>
+</member>
+<member>
+<member_full>Bingaman (D-NM)</member_full>
+<last_name>Bingaman</last_name>
+<first_name>Jeff</first_name>
+<party>D</party>
+<state>NM</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S167</lis_member_id>
+</member>
+<member>
+<member_full>Bond (R-MO)</member_full>
+<last_name>Bond</last_name>
+<first_name>Christopher</first_name>
+<party>R</party>
+<state>MO</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S200</lis_member_id>
+</member>
+<member>
+<member_full>Boxer (D-CA)</member_full>
+<last_name>Boxer</last_name>
+<first_name>Barbara</first_name>
+<party>D</party>
+<state>CA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S223</lis_member_id>
+</member>
+<member>
+<member_full>Brown (D-OH)</member_full>
+<last_name>Brown</last_name>
+<first_name>Sherrod</first_name>
+<party>D</party>
+<state>OH</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S307</lis_member_id>
+</member>
+<member>
+<member_full>Brownback (R-KS)</member_full>
+<last_name>Brownback</last_name>
+<first_name>Samuel</first_name>
+<party>R</party>
+<state>KS</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S249</lis_member_id>
+</member>
+<member>
+<member_full>Bunning (R-KY)</member_full>
+<last_name>Bunning</last_name>
+<first_name>Jim</first_name>
+<party>R</party>
+<state>KY</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S265</lis_member_id>
+</member>
+<member>
+<member_full>Burr (R-NC)</member_full>
+<last_name>Burr</last_name>
+<first_name>Richard</first_name>
+<party>R</party>
+<state>NC</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S300</lis_member_id>
+</member>
+<member>
+<member_full>Burris (D-IL)</member_full>
+<last_name>Burris</last_name>
+<first_name>Roland</first_name>
+<party>D</party>
+<state>IL</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S328</lis_member_id>
+</member>
+<member>
+<member_full>Byrd (D-WV)</member_full>
+<last_name>Byrd</last_name>
+<first_name>Robert</first_name>
+<party>D</party>
+<state>WV</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S017</lis_member_id>
+</member>
+<member>
+<member_full>Cantwell (D-WA)</member_full>
+<last_name>Cantwell</last_name>
+<first_name>Maria</first_name>
+<party>D</party>
+<state>WA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S275</lis_member_id>
+</member>
+<member>
+<member_full>Cardin (D-MD)</member_full>
+<last_name>Cardin</last_name>
+<first_name>Benjamin</first_name>
+<party>D</party>
+<state>MD</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S308</lis_member_id>
+</member>
+<member>
+<member_full>Carper (D-DE)</member_full>
+<last_name>Carper</last_name>
+<first_name>Thomas</first_name>
+<party>D</party>
+<state>DE</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S277</lis_member_id>
+</member>
+<member>
+<member_full>Casey (D-PA)</member_full>
+<last_name>Casey</last_name>
+<first_name>Bob</first_name>
+<party>D</party>
+<state>PA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S309</lis_member_id>
+</member>
+<member>
+<member_full>Chambliss (R-GA)</member_full>
+<last_name>Chambliss</last_name>
+<first_name>Saxby</first_name>
+<party>R</party>
+<state>GA</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S290</lis_member_id>
+</member>
+<member>
+<member_full>Coburn (R-OK)</member_full>
+<last_name>Coburn</last_name>
+<first_name>Tom</first_name>
+<party>R</party>
+<state>OK</state>
+<vote_cast>Not Voting</vote_cast>
+<lis_member_id>S301</lis_member_id>
+</member>
+<member>
+<member_full>Cochran (R-MS)</member_full>
+<last_name>Cochran</last_name>
+<first_name>Thad</first_name>
+<party>R</party>
+<state>MS</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S136</lis_member_id>
+</member>
+<member>
+<member_full>Collins (R-ME)</member_full>
+<last_name>Collins</last_name>
+<first_name>Susan</first_name>
+<party>R</party>
+<state>ME</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S252</lis_member_id>
+</member>
+<member>
+<member_full>Conrad (D-ND)</member_full>
+<last_name>Conrad</last_name>
+<first_name>Kent</first_name>
+<party>D</party>
+<state>ND</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S201</lis_member_id>
+</member>
+<member>
+<member_full>Corker (R-TN)</member_full>
+<last_name>Corker</last_name>
+<first_name>Bob</first_name>
+<party>R</party>
+<state>TN</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S310</lis_member_id>
+</member>
+<member>
+<member_full>Cornyn (R-TX)</member_full>
+<last_name>Cornyn</last_name>
+<first_name>John</first_name>
+<party>R</party>
+<state>TX</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S287</lis_member_id>
+</member>
+<member>
+<member_full>Crapo (R-ID)</member_full>
+<last_name>Crapo</last_name>
+<first_name>Mike</first_name>
+<party>R</party>
+<state>ID</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S266</lis_member_id>
+</member>
+<member>
+<member_full>DeMint (R-SC)</member_full>
+<last_name>DeMint</last_name>
+<first_name>James</first_name>
+<party>R</party>
+<state>SC</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S302</lis_member_id>
+</member>
+<member>
+<member_full>Dodd (D-CT)</member_full>
+<last_name>Dodd</last_name>
+<first_name>Christopher</first_name>
+<party>D</party>
+<state>CT</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S150</lis_member_id>
+</member>
+<member>
+<member_full>Dorgan (D-ND)</member_full>
+<last_name>Dorgan</last_name>
+<first_name>Byron</first_name>
+<party>D</party>
+<state>ND</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S222</lis_member_id>
+</member>
+<member>
+<member_full>Durbin (D-IL)</member_full>
+<last_name>Durbin</last_name>
+<first_name>Richard</first_name>
+<party>D</party>
+<state>IL</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S253</lis_member_id>
+</member>
+<member>
+<member_full>Ensign (R-NV)</member_full>
+<last_name>Ensign</last_name>
+<first_name>John</first_name>
+<party>R</party>
+<state>NV</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S281</lis_member_id>
+</member>
+<member>
+<member_full>Enzi (R-WY)</member_full>
+<last_name>Enzi</last_name>
+<first_name>Michael</first_name>
+<party>R</party>
+<state>WY</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S254</lis_member_id>
+</member>
+<member>
+<member_full>Feingold (D-WI)</member_full>
+<last_name>Feingold</last_name>
+<first_name>Russ</first_name>
+<party>D</party>
+<state>WI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S230</lis_member_id>
+</member>
+<member>
+<member_full>Feinstein (D-CA)</member_full>
+<last_name>Feinstein</last_name>
+<first_name>Dianne</first_name>
+<party>D</party>
+<state>CA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S221</lis_member_id>
+</member>
+<member>
+<member_full>Gillibrand (D-NY)</member_full>
+<last_name>Gillibrand</last_name>
+<first_name>Kirsten</first_name>
+<party>D</party>
+<state>NY</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S331</lis_member_id>
+</member>
+<member>
+<member_full>Graham (R-SC)</member_full>
+<last_name>Graham</last_name>
+<first_name>Lindsey</first_name>
+<party>R</party>
+<state>SC</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S293</lis_member_id>
+</member>
+<member>
+<member_full>Grassley (R-IA)</member_full>
+<last_name>Grassley</last_name>
+<first_name>Charles</first_name>
+<party>R</party>
+<state>IA</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S153</lis_member_id>
+</member>
+<member>
+<member_full>Gregg (R-NH)</member_full>
+<last_name>Gregg</last_name>
+<first_name>Judd</first_name>
+<party>R</party>
+<state>NH</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S224</lis_member_id>
+</member>
+<member>
+<member_full>Hagan (D-NC)</member_full>
+<last_name>Hagan</last_name>
+<first_name>Kay</first_name>
+<party>D</party>
+<state>NC</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S320</lis_member_id>
+</member>
+<member>
+<member_full>Harkin (D-IA)</member_full>
+<last_name>Harkin</last_name>
+<first_name>Tom</first_name>
+<party>D</party>
+<state>IA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S172</lis_member_id>
+</member>
+<member>
+<member_full>Hatch (R-UT)</member_full>
+<last_name>Hatch</last_name>
+<first_name>Orrin</first_name>
+<party>R</party>
+<state>UT</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S118</lis_member_id>
+</member>
+<member>
+<member_full>Hutchison (R-TX)</member_full>
+<last_name>Hutchison</last_name>
+<first_name>Kay</first_name>
+<party>R</party>
+<state>TX</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S235</lis_member_id>
+</member>
+<member>
+<member_full>Inhofe (R-OK)</member_full>
+<last_name>Inhofe</last_name>
+<first_name>Jim</first_name>
+<party>R</party>
+<state>OK</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S236</lis_member_id>
+</member>
+<member>
+<member_full>Inouye (D-HI)</member_full>
+<last_name>Inouye</last_name>
+<first_name>Daniel</first_name>
+<party>D</party>
+<state>HI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S051</lis_member_id>
+</member>
+<member>
+<member_full>Isakson (R-GA)</member_full>
+<last_name>Isakson</last_name>
+<first_name>Johnny</first_name>
+<party>R</party>
+<state>GA</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S305</lis_member_id>
+</member>
+<member>
+<member_full>Johanns (R-NE)</member_full>
+<last_name>Johanns</last_name>
+<first_name>Mike</first_name>
+<party>R</party>
+<state>NE</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S321</lis_member_id>
+</member>
+<member>
+<member_full>Johnson (D-SD)</member_full>
+<last_name>Johnson</last_name>
+<first_name>Tim</first_name>
+<party>D</party>
+<state>SD</state>
+<vote_cast>Not Voting</vote_cast>
+<lis_member_id>S257</lis_member_id>
+</member>
+<member>
+<member_full>Kaufman (D-DE)</member_full>
+<last_name>Kaufman</last_name>
+<first_name>Edward</first_name>
+<party>D</party>
+<state>DE</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S329</lis_member_id>
+</member>
+<member>
+<member_full>Kennedy (D-MA)</member_full>
+<last_name>Kennedy</last_name>
+<first_name>Edward</first_name>
+<party>D</party>
+<state>MA</state>
+<vote_cast>Not Voting</vote_cast>
+<lis_member_id>S055</lis_member_id>
+</member>
+<member>
+<member_full>Kerry (D-MA)</member_full>
+<last_name>Kerry</last_name>
+<first_name>John</first_name>
+<party>D</party>
+<state>MA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S173</lis_member_id>
+</member>
+<member>
+<member_full>Klobuchar (D-MN)</member_full>
+<last_name>Klobuchar</last_name>
+<first_name>Amy</first_name>
+<party>D</party>
+<state>MN</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S311</lis_member_id>
+</member>
+<member>
+<member_full>Kohl (D-WI)</member_full>
+<last_name>Kohl</last_name>
+<first_name>Herb</first_name>
+<party>D</party>
+<state>WI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S209</lis_member_id>
+</member>
+<member>
+<member_full>Kyl (R-AZ)</member_full>
+<last_name>Kyl</last_name>
+<first_name>Jon</first_name>
+<party>R</party>
+<state>AZ</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S243</lis_member_id>
+</member>
+<member>
+<member_full>Landrieu (D-LA)</member_full>
+<last_name>Landrieu</last_name>
+<first_name>Mary</first_name>
+<party>D</party>
+<state>LA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S258</lis_member_id>
+</member>
+<member>
+<member_full>Lautenberg (D-NJ)</member_full>
+<last_name>Lautenberg</last_name>
+<first_name>Frank</first_name>
+<party>D</party>
+<state>NJ</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S166</lis_member_id>
+</member>
+<member>
+<member_full>Leahy (D-VT)</member_full>
+<last_name>Leahy</last_name>
+<first_name>Patrick</first_name>
+<party>D</party>
+<state>VT</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S057</lis_member_id>
+</member>
+<member>
+<member_full>Levin (D-MI)</member_full>
+<last_name>Levin</last_name>
+<first_name>Carl</first_name>
+<party>D</party>
+<state>MI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S131</lis_member_id>
+</member>
+<member>
+<member_full>Lieberman (ID-CT)</member_full>
+<last_name>Lieberman</last_name>
+<first_name>Joe</first_name>
+<party>ID</party>
+<state>CT</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S210</lis_member_id>
+</member>
+<member>
+<member_full>Lincoln (D-AR)</member_full>
+<last_name>Lincoln</last_name>
+<first_name>Blanche</first_name>
+<party>D</party>
+<state>AR</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S269</lis_member_id>
+</member>
+<member>
+<member_full>Lugar (R-IN)</member_full>
+<last_name>Lugar</last_name>
+<first_name>Richard</first_name>
+<party>R</party>
+<state>IN</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S105</lis_member_id>
+</member>
+<member>
+<member_full>Martinez (R-FL)</member_full>
+<last_name>Martinez</last_name>
+<first_name>Mel</first_name>
+<party>R</party>
+<state>FL</state>
+<vote_cast>Not Voting</vote_cast>
+<lis_member_id>S304</lis_member_id>
+</member>
+<member>
+<member_full>McCain (R-AZ)</member_full>
+<last_name>McCain</last_name>
+<first_name>John</first_name>
+<party>R</party>
+<state>AZ</state>
+<vote_cast>Not Voting</vote_cast>
+<lis_member_id>S197</lis_member_id>
+</member>
+<member>
+<member_full>McCaskill (D-MO)</member_full>
+<last_name>McCaskill</last_name>
+<first_name>Claire</first_name>
+<party>D</party>
+<state>MO</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S312</lis_member_id>
+</member>
+<member>
+<member_full>McConnell (R-KY)</member_full>
+<last_name>McConnell</last_name>
+<first_name>Mitch</first_name>
+<party>R</party>
+<state>KY</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S174</lis_member_id>
+</member>
+<member>
+<member_full>Menendez (D-NJ)</member_full>
+<last_name>Menendez</last_name>
+<first_name>Robert</first_name>
+<party>D</party>
+<state>NJ</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S306</lis_member_id>
+</member>
+<member>
+<member_full>Merkley (D-OR)</member_full>
+<last_name>Merkley</last_name>
+<first_name>Jeff</first_name>
+<party>D</party>
+<state>OR</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S322</lis_member_id>
+</member>
+<member>
+<member_full>Mikulski (D-MD)</member_full>
+<last_name>Mikulski</last_name>
+<first_name>Barbara</first_name>
+<party>D</party>
+<state>MD</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S182</lis_member_id>
+</member>
+<member>
+<member_full>Murkowski (R-AK)</member_full>
+<last_name>Murkowski</last_name>
+<first_name>Lisa</first_name>
+<party>R</party>
+<state>AK</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S288</lis_member_id>
+</member>
+<member>
+<member_full>Murray (D-WA)</member_full>
+<last_name>Murray</last_name>
+<first_name>Patty</first_name>
+<party>D</party>
+<state>WA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S229</lis_member_id>
+</member>
+<member>
+<member_full>Nelson (D-FL)</member_full>
+<last_name>Nelson</last_name>
+<first_name>Bill</first_name>
+<party>D</party>
+<state>FL</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S282</lis_member_id>
+</member>
+<member>
+<member_full>Nelson (D-NE)</member_full>
+<last_name>Nelson</last_name>
+<first_name>E.</first_name>
+<party>D</party>
+<state>NE</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S283</lis_member_id>
+</member>
+<member>
+<member_full>Pryor (D-AR)</member_full>
+<last_name>Pryor</last_name>
+<first_name>Mark</first_name>
+<party>D</party>
+<state>AR</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S295</lis_member_id>
+</member>
+<member>
+<member_full>Reed (D-RI)</member_full>
+<last_name>Reed</last_name>
+<first_name>John</first_name>
+<party>D</party>
+<state>RI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S259</lis_member_id>
+</member>
+<member>
+<member_full>Reid (D-NV)</member_full>
+<last_name>Reid</last_name>
+<first_name>Harry</first_name>
+<party>D</party>
+<state>NV</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S198</lis_member_id>
+</member>
+<member>
+<member_full>Risch (R-ID)</member_full>
+<last_name>Risch</last_name>
+<first_name>James</first_name>
+<party>R</party>
+<state>ID</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S323</lis_member_id>
+</member>
+<member>
+<member_full>Roberts (R-KS)</member_full>
+<last_name>Roberts</last_name>
+<first_name>Pat</first_name>
+<party>R</party>
+<state>KS</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S260</lis_member_id>
+</member>
+<member>
+<member_full>Rockefeller (D-WV)</member_full>
+<last_name>Rockefeller</last_name>
+<first_name>Jay</first_name>
+<party>D</party>
+<state>WV</state>
+<vote_cast>Not Voting</vote_cast>
+<lis_member_id>S176</lis_member_id>
+</member>
+<member>
+<member_full>Sanders (I-VT)</member_full>
+<last_name>Sanders</last_name>
+<first_name>Bernard</first_name>
+<party>I</party>
+<state>VT</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S313</lis_member_id>
+</member>
+<member>
+<member_full>Schumer (D-NY)</member_full>
+<last_name>Schumer</last_name>
+<first_name>Charles</first_name>
+<party>D</party>
+<state>NY</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S270</lis_member_id>
+</member>
+<member>
+<member_full>Sessions (R-AL)</member_full>
+<last_name>Sessions</last_name>
+<first_name>Jeff</first_name>
+<party>R</party>
+<state>AL</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S261</lis_member_id>
+</member>
+<member>
+<member_full>Shaheen (D-NH)</member_full>
+<last_name>Shaheen</last_name>
+<first_name>Jeanne</first_name>
+<party>D</party>
+<state>NH</state>
+<vote_cast>Not Voting</vote_cast>
+<lis_member_id>S324</lis_member_id>
+</member>
+<member>
+<member_full>Shelby (R-AL)</member_full>
+<last_name>Shelby</last_name>
+<first_name>Richard</first_name>
+<party>R</party>
+<state>AL</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S184</lis_member_id>
+</member>
+<member>
+<member_full>Snowe (R-ME)</member_full>
+<last_name>Snowe</last_name>
+<first_name>Olympia</first_name>
+<party>R</party>
+<state>ME</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S245</lis_member_id>
+</member>
+<member>
+<member_full>Specter (D-PA)</member_full>
+<last_name>Specter</last_name>
+<first_name>Arlen</first_name>
+<party>D</party>
+<state>PA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S161</lis_member_id>
+</member>
+<member>
+<member_full>Stabenow (D-MI)</member_full>
+<last_name>Stabenow</last_name>
+<first_name>Debbie</first_name>
+<party>D</party>
+<state>MI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S284</lis_member_id>
+</member>
+<member>
+<member_full>Tester (D-MT)</member_full>
+<last_name>Tester</last_name>
+<first_name>Jon</first_name>
+<party>D</party>
+<state>MT</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S314</lis_member_id>
+</member>
+<member>
+<member_full>Thune (R-SD)</member_full>
+<last_name>Thune</last_name>
+<first_name>John</first_name>
+<party>R</party>
+<state>SD</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S303</lis_member_id>
+</member>
+<member>
+<member_full>Udall (D-CO)</member_full>
+<last_name>Udall</last_name>
+<first_name>Mark</first_name>
+<party>D</party>
+<state>CO</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S325</lis_member_id>
+</member>
+<member>
+<member_full>Udall (D-NM)</member_full>
+<last_name>Udall</last_name>
+<first_name>Tom</first_name>
+<party>D</party>
+<state>NM</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S326</lis_member_id>
+</member>
+<member>
+<member_full>Vitter (R-LA)</member_full>
+<last_name>Vitter</last_name>
+<first_name>David</first_name>
+<party>R</party>
+<state>LA</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S299</lis_member_id>
+</member>
+<member>
+<member_full>Voinovich (R-OH)</member_full>
+<last_name>Voinovich</last_name>
+<first_name>George</first_name>
+<party>R</party>
+<state>OH</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S271</lis_member_id>
+</member>
+<member>
+<member_full>Warner (D-VA)</member_full>
+<last_name>Warner</last_name>
+<first_name>Mark</first_name>
+<party>D</party>
+<state>VA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S327</lis_member_id>
+</member>
+<member>
+<member_full>Webb (D-VA)</member_full>
+<last_name>Webb</last_name>
+<first_name>James</first_name>
+<party>D</party>
+<state>VA</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S315</lis_member_id>
+</member>
+<member>
+<member_full>Whitehouse (D-RI)</member_full>
+<last_name>Whitehouse</last_name>
+<first_name>Sheldon</first_name>
+<party>D</party>
+<state>RI</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S316</lis_member_id>
+</member>
+<member>
+<member_full>Wicker (R-MS)</member_full>
+<last_name>Wicker</last_name>
+<first_name>Roger</first_name>
+<party>R</party>
+<state>MS</state>
+<vote_cast>Yea</vote_cast>
+<lis_member_id>S318</lis_member_id>
+</member>
+<member>
+<member_full>Wyden (D-OR)</member_full>
+<last_name>Wyden</last_name>
+<first_name>Ron</first_name>
+<party>D</party>
+<state>OR</state>
+<vote_cast>Nay</vote_cast>
+<lis_member_id>S247</lis_member_id>
+</member>
+</members>
+</roll_call_vote>
