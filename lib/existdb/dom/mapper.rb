@@ -26,6 +26,16 @@ module ExistDB
                 @cache[tag_name] ||= self.class.get_attribute(tag_name, @dom)
             end
 
+            def set_element(tag_name, value)
+                @cache.delete(tag_name)
+                self.class.set_element(@dom, tag_name, value)
+            end
+
+            def set_attribute(tag_name, value)
+                @cache.delete(tag_name)
+                self.class.set_attribute(@dom, tag_name, value)
+            end
+
             module ClassMethods
 
                 def attribute(name, type = String, options = {})
@@ -35,6 +45,10 @@ module ExistDB
                     self.class_eval %{
                         def #{a.method_name}
                             get_attribute(#{a.tag.inspect})
+                        end
+                        
+                        def #{a.method_name}=(value)
+                            set_attribute(#{a.tag.inspect}, value)
                         end
                     }
                 end
@@ -51,6 +65,10 @@ module ExistDB
                         def #{e.method_name}
                             get_element(#{e.tag.inspect})
                         end
+                        
+                        def #{e.method_name}=(value)
+                            set_element(#{e.tag.inspect}, value)
+                        end
                     }
                 end
 
@@ -60,18 +78,56 @@ module ExistDB
 
                 def get_element(tag_name, dom)
                     e = @elements[tag_name]
-                    dom.getChildNodes.each do |child|
-                        next if not child.respond_to?(:getTagName) or child.getTagName != tag_name
-                        return e.type_cast( child.getNodeValue )
-                        break
-                    end
+                    child = getFirstChildByTagName(dom, tag_name)
+                    return e.type_cast( child.getNodeValue ) if child.respond_to?(:getNodeValue)
                     return nil
                 end
 
                 def get_attribute(tag_name, dom)
                     a = @attributes[tag_name]
-                    value = dom.getAttributes.getNamedItem(tag_name) rescue nil
+                    value = dom.getAttributes.getNamedItem(tag_name).getValue rescue nil
                     a.type_cast( value )
+                end
+
+                def set_element(dom, tag_name, value)
+                    parent = dom
+                    node = getFirstChildByTagName(dom, tag_name)
+                    if node then
+                        child = node.getChildNodes.select{ |child| 
+                            child.getNodeType == org.w3c.dom.Node.TEXT_NODE }.first
+                        text = org.exist.dom.TextImpl.new( value.to_s.to_java_string )
+                        if child then
+                            ExistDB::Embedded.instance.transaction do |transaction|
+                                text.setOwnerDocument( node.getOwnerDocument )
+                                node.updateChild(transaction, child, text)
+                            end
+                        else
+                            node.appendChild(text)
+                        end
+                    else
+                        doc = parent.getOwnerDocument
+                        node = doc.createElement( tag_name.to_s.to_java_string )
+                        text = doc.createTextNode( value.to_s.to_java_string )
+                        parent.appendChild(node)
+                        node.appendChild(text)
+                    end
+                    return value
+                end
+                
+                def set_attribute(dom, tag_name, value)
+                    attr = dom.getAttributes.getNamedItem(tag_name)
+                    new_attr = org.exist.dom.AttrImpl.new(
+                        org.exist.dom.QName.new( tag_name.to_s.to_java_string ),
+                        value.to_s.to_java_string )
+                    ExistDB::Embedded.instance.transaction do |transaction|
+                        if attr then
+                            new_attr.setOwnerDocument( dom.getOwnerDocument )
+                            dom.updateChild(transaction, attr, new_attr)
+                        else
+                            dom.appendChild(new_attr)
+                        end
+                    end
+                    return value
                 end
 
                 def tag(new_tag_name)
@@ -115,6 +171,18 @@ module ExistDB
                         nil
                     end
                 end
+
+                private
+
+                def getFirstChildByTagName(dom, tag_name)
+                    dom.getChildNodes.each do |child|
+                        next if not child.respond_to?(:getTagName) or child.getTagName != tag_name
+                        return child
+                        break
+                    end
+                    return nil
+                end
+
             end
 
             class Boolean; end

@@ -24,20 +24,19 @@ module ExistDB
       @database_instance_manager = @base_collection.getService('DatabaseInstanceManager', '1.0')
       @collection_manager = @base_collection.getService('CollectionManager', '1.0')
 
-      true
+      @running = true
     end
 
     def running?
-      @database_instance_manager.getStatus
-      true
-    rescue
-      false
+      @running
     end
 
     alias :started? :running? 
 
     def stop
+      return false if stopped?
       @database_instance_manager.shutdown
+      @running = false
       true
     end
 
@@ -46,6 +45,7 @@ module ExistDB
     end
 
     def db
+      raise InstanceNotRunning if stopped?
       ClassWrap[ @base_collection ]
     end
 
@@ -54,8 +54,31 @@ module ExistDB
     end
 
     def xquery_service
+      raise InstanceNotRunning if stopped?
       ClassWrap[ @base_collection.getService('XQueryService', '1.0') ]
     end
 
+    # org.exist.storage.BrokerPool
+    def broker_pool
+      raise InstanceNotRunning if stopped?
+      org.exist.storage.BrokerPool.getInstance(@impl.getName)
+    end
+
+    # org.exist.storage.txn.Txn
+    def transaction # :yields: transaction
+      raise InstanceNotRunning if stopped?
+      mgr = broker_pool.getTransactionManager
+      txn = mgr.beginTransaction
+      begin
+        yield txn
+        mgr.commit(txn)
+      rescue
+        mgr.abort(txn)
+        raise
+      end
+    end
+
+    class InstanceNotRunning < Exception; end
   end
+
 end

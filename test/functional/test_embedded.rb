@@ -25,7 +25,7 @@ class EmbeddedTest < Test::Unit::TestCase
             Embedded.instance.stop
         end
 
-        assert_raise org.xmldb.api.base.XMLDBException do
+        assert_raise Embedded::InstanceNotRunning do
             Embedded.instance.db.inspect
         end
     end
