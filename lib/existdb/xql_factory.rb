@@ -105,14 +105,31 @@ module ExistDB
 
       def sort_statement
         if sort then
-          "order by $node/#{sort}"
+          if sort.is_a?(String) then
+            "order by $node/#{sort}"
+          elsif sort.is_a?(Hash) then
+            "order by $node/#{sort.keys.first} #{sort_direction(sort.values.first)}"
+          elsif sort.is_a?(Array) then
+            "order by " + sort.map{ |h| "$node/#{h.keys.first} #{sort_direction(h.values.first)}" }.join(', ')
+          end
         else
           ''
         end
       end
 
+      def sort_direction(dir)
+        dir = dir.to_s.downcase
+        if %w|asc ascending|.include?(dir)
+            return :ascending
+        elsif %|desc descending|.include?(dir)
+            return :descending
+        else
+            return :ascending
+        end
+      end
+
       def search_statement
-        "[contains(*, #{ search.inspect })]" if search
+        "[contains(lower-case(*), lower-case(#{ search.inspect }))]" if search
       end
 
       def init_statement

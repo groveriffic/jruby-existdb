@@ -92,23 +92,22 @@ module ExistDB
                 def set_element(dom, tag_name, value)
                     parent = dom
                     node = getFirstChildByTagName(dom, tag_name)
-                    if node then
-                        child = node.getChildNodes.select{ |child| 
-                            child.getNodeType == org.w3c.dom.Node.TEXT_NODE }.first
-                        text = org.exist.dom.TextImpl.new( value.to_s.to_java_string )
-                        if child then
-                            ExistDB::Embedded.instance.transaction do |transaction|
-                                text.setOwnerDocument( node.getOwnerDocument )
-                                node.updateChild(transaction, child, text)
-                            end
-                        else
-                            node.appendChild(text)
+                    
+                    if node.nil? then
+                        doc = parent.getOwnerDocument
+                        node = doc.createElement( tag_name.to_s )
+                        parent.appendChild(node)
+                    end
+
+                    child = node.getChildNodes.select{ |child| 
+                        child.getNodeType == org.w3c.dom.Node.TEXT_NODE }.first
+                    text = org.exist.dom.TextImpl.new( value.to_s.to_java_string )
+                    if child then
+                        ExistDB::Embedded.instance.transaction do |transaction|
+                            text.setOwnerDocument( node.getOwnerDocument )
+                            node.updateChild(transaction, child, text)
                         end
                     else
-                        doc = parent.getOwnerDocument
-                        node = doc.createElement( tag_name.to_s.to_java_string )
-                        text = doc.createTextNode( value.to_s.to_java_string )
-                        parent.appendChild(node)
                         node.appendChild(text)
                     end
                     return value
