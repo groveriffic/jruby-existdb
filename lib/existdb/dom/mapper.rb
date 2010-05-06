@@ -171,6 +171,11 @@ module ExistDB
                     end
                 end
 
+                def find_by_xquery(resource, query)
+                    nodes = resource.xquery(query)
+                    nodes.map{ |node| new(node) }
+                end
+
                 private
 
                 def getFirstChildByTagName(dom, tag_name)

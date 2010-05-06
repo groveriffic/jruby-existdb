@@ -129,7 +129,7 @@ module ExistDB
       end
 
       def search_statement
-        "[contains(lower-case(*), lower-case(#{ search.inspect }))]" if search
+        "[contains(*, #{ search.inspect })]" if search
       end
 
       def init_statement
