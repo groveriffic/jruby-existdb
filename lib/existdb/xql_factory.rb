@@ -75,7 +75,10 @@ module ExistDB
     class XQLFactory
       
       include Meta
-      attr_accessor :start, :max, :doc, :node_xpath, :sort, :return_attributes, :return_tag, :node_remap, :search
+      attr_accessor :start, :max, :doc, 
+        :node_xpath, :sort, :return_attributes,
+        :return_tag, :node_remap, :search, :ftquery
+
       # Accepts Ordered or Named Parameters for any of the attr_accessors
       #
       # Ordered Options -- :doc, :start, :max, :sort
@@ -129,7 +132,8 @@ module ExistDB
       end
 
       def search_statement
-        "[contains(*, #{ search.inspect })]" if search
+        "[contains(., #{ search.inspect })]" if search
+        "[ft:query(., #{ ftquery.inspect })]" if ftquery
       end
 
       def init_statement

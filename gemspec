@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s|
     s.name = 'jruby-existdb'
-    s.version = '0.2'
+    s.version = '0.3'
     s.summary = 'Wrapper for eXistDB\'s XMLDB API Drivers'
     s.author = 'Sam Ehlers'
     s.require_paths = ['lib']

@@ -2,7 +2,7 @@ module ExistDB
     class Collection
 
         extend ClassWrappingForwardable
-        delegate_to_java :name, :path, :uri, :parent => :getParentCollection
+        delegate_to_java :name, :path, :uri, :parent => :getParentCollection, :to_s => :name
         
         def initialize(java_obj)
             @obj = java_obj
@@ -64,7 +64,11 @@ module ExistDB
         end
 
         def create_collection(path)
-            ClassWrap[ collection_manager.createCollection( self.path + '/' + path ) ]
+            if path =~ /^\// then
+                ClassWrap[ collection_manager.createCollection( path ) ]
+            else
+                ClassWrap[ collection_manager.createCollection( self.path + '/' + path ) ]
+            end
         end
 
         def store_url(url, name)
