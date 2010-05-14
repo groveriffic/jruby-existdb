@@ -86,7 +86,7 @@ module ExistDB
 
             def lucenes
                 if @lucenes then
-                    "<lucene>#{ @lucenes.join('') }</lucene>"
+                    %|<lucene><analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/><analyzer id="ws" class="org.apache.lucene.analysis.WhitespaceAnalyzer"/>#{ @lucenes.join('') }</lucene>|
                 end
             end
 
