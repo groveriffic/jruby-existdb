@@ -22,6 +22,10 @@ module ExistDB
                 @cache[tag_name] ||= self.class.get_element(tag_name, @dom)
             end
 
+            def get_elements(tag_name, klass)
+                @cache[tag_name] ||= self.class.get_elements(tag_name, klass, @dom)
+            end
+
             def get_attribute(tag_name)
                 @cache[tag_name] ||= self.class.get_attribute(tag_name, @dom)
             end
@@ -57,19 +61,40 @@ module ExistDB
                     @attributes.values
                 end
 
-                def element(name, type = String, options = {})
+                def element(name, type = String, options = {}, &block)
                     e = Element.new(name, type, options)
                     @elements ||= Hash.new
                     @elements[e.tag] = e
-                    self.class_eval %{
-                        def #{e.method_name}
-                            get_element(#{e.tag.inspect})
+
+                    if (type.respond_to?(:is_dom_mapper?) and type.is_dom_mapper?) or block_given? then # Nested elements
+                        if block_given? then # Anonymous Mapper Class
+                            klass = self.class_eval %{
+                                @@#{e.method_name}_klass = Class.new do
+                                    include ExistDB::Dom::Mapper
+                                end
+                            }
+                            klass.instance_eval &block
+                        else
+                            self.class_eval %{
+                                @@#{e.method_name}_klass = #{type}
+                            }
                         end
-                        
-                        def #{e.method_name}=(value)
-                            set_element(#{e.tag.inspect}, value)
-                        end
-                    }
+                        self.class_eval %{
+                            def #{e.method_name}
+                                get_elements(#{e.tag.inspect}, @@#{e.method_name}_klass)
+                            end
+                        }
+                    else # No nested elements
+                        self.class_eval %{
+                            def #{e.method_name}
+                                get_element(#{e.tag.inspect})
+                            end
+                            
+                            def #{e.method_name}=(value)
+                                set_element(#{e.tag.inspect}, value)
+                            end
+                        }
+                    end
                 end
 
                 def elements
@@ -81,6 +106,16 @@ module ExistDB
                     child = getFirstChildByTagName(dom, tag_name)
                     return e.type_cast( child.getNodeValue ) if child.respond_to?(:getNodeValue)
                     return nil
+                end
+
+                def get_elements(tag_name, klass, dom)
+                    children = dom.getElementsByTagName(tag_name)
+                    size = children.getLength
+                    if size == 1 then
+                        klass.new(children.item(0))
+                    elsif size > 1 then
+                        0..size.map{ |i| klass.new(children.item(i)) }
+                    end
                 end
 
                 def get_attribute(tag_name, dom)
@@ -174,6 +209,10 @@ module ExistDB
                 def find_by_xquery(resource, query)
                     nodes = resource.xquery(query)
                     nodes.map{ |node| new(node) }
+                end
+
+                def is_dom_mapper?
+                    true
                 end
 
                 private
