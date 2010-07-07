@@ -46,8 +46,6 @@ module ExistDB
 
     end
     init
-    autocreate_data_directory
-    autocreate_config_files
   end
 end
 
@@ -68,6 +66,7 @@ require 'existdb/resource_set.rb'
 require 'existdb/xquery_service.rb'
 require 'existdb/meta.rb'
 require 'existdb/embedded.rb'
+require 'existdb/connection.rb'
 require 'existdb/xql_factory.rb'
 require 'existdb/index_factory.rb'
 require 'existdb/dom/mapper.rb'

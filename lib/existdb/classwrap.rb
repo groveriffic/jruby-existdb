@@ -34,10 +34,15 @@ module ExistDB
             def map
                 {
                     Java::OrgExistXmldb::LocalCollection => Collection,
+                    Java::OrgExistXmldb::RemoteCollection => Collection,
                     Java::OrgExistXmldb::LocalXPathQueryService => XQueryService,
+                    Java::OrgExistXmldb::RemoteXPathQueryService => XQueryService,
                     Java::OrgExistXmldb::LocalResourceSet => ResourceSet,
+                    Java::OrgExistXmldb::RemoteResourceSet => ResourceSet,
                     Java::OrgExistXmldb::LocalXMLResource => Resource::Xml,
+                    Java::OrgExistXmldb::RemoteXMLResource => Resource::Xml,
                     Java::OrgExistXmldb::LocalBinaryResource => Resource::Binary,
+                    Java::OrgExistXmldb::RemoteBinaryResource => Resource::Binary,
                     Java::OrgExistXmldb::FullXmldbURI => Proc.new { |obj| obj.toString },
                     Java::JavaUtil::Date => Proc.new { |obj| Time.parse( obj.to_s ) },
                     Java::OrgExistXquery::PathExpr => Proc.new { |obj| obj }

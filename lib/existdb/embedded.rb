@@ -17,6 +17,8 @@ module ExistDB
 
     def start
       return false if running?
+      ExistDB::SystemProperties.autocreate_data_directory
+      ExistDB::SystemProperties.autocreate_config_files
       @impl = org.exist.xmldb.DatabaseImpl.new
       @properties.each{ |key, value| @impl.setProperty(key.to_s, value.to_s) }
       org.xmldb.api.DatabaseManager.registerDatabase(@impl)
