@@ -57,10 +57,8 @@ module ExistDB
                     type ||= "XMLResource"
                     
                     @obj = collection.createResource(options[:name], type)
-                    if data then
-                        self.content = data
-                        self.save
-                    end
+
+                    self.content = data if data
                 end
 
             end
