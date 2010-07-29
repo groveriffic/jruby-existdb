@@ -77,6 +77,10 @@ module ExistDB
                 parent.delete(self)
             end
 
+            def path
+                File.join(parent.path, @obj.getId)
+            end
+
         end
     end
 end
