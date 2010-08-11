@@ -16,6 +16,17 @@ module ExistDB
                 @cache = Hash.new
             end
 
+            def to_s
+                if @dom then
+                    w = java.io.StringWriter.new
+                    x = org.exist.util.serializer.XMLWriter.new(w)
+                    s = org.exist.util.serializer.DOMSerializer.new(w, java.util.Properties.new)
+                    s.serialize(@dom)
+                    w.flush
+                    return w.toString
+                end
+            end
+
             private
 
             def get_element(tag_name)
@@ -196,9 +207,9 @@ module ExistDB
                     end
 
                     if xql.doc.is_a?(Resource::Xml) then
-                        xql.doc.xquery(xql.xquery).map{ |res| new(res) }
+                        xql.doc.query(xql.xquery).map{ |res| new(res) }
                     elsif xql.doc.is_a?(ResourceSet) then
-                        xql.doc.join.xquery(xql.xquery).map{ |res| new(res) }
+                        xql.doc.join.query(xql.xquery).map{ |res| new(res) }
                     elsif xql.doc.is_a?(String) and Embedded.instance.running?
                         Embedded.instance.xquery_service.query(xql.xquery).map{ |res| new(res) }
                     else
